@@ -1,0 +1,26 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        .row
+            if products
+                each product in products
+                    .col-3.my-5
+                        img(class="img-fluid", src=product.image, width="100%")
+                        h5 #{product.name}
+                        p=product.desc
+                        p=product.price
+                        button(class="btn btn-primary") Add to cart
+    
+    - var index = 1;
+    nav(aria-label='...')
+        ul#page-list(class="d-flex justify-content-center pagination")
+            while index <= links    
+                li.page-item(data-locate=index)
+                    a.page-link(href='/products?page=' + index) #{index++}
+    
+    script(src="/js/dom.js")
+
+
+
+ 
+            

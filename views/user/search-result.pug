@@ -1,0 +1,9 @@
+extends ../layouts/common.pug
+block content
+    form(action="search" method="GET")
+        input(type="text", name="q", value=key)
+        button(type="submit") Search
+    ul
+        h5 Search result:
+        each user in users
+            li #{user.name}

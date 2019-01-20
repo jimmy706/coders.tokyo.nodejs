@@ -1,0 +1,21 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        h1.text-center Hi this is user page
+        a(href = "/user/create") Create user
+        form(action="user/search" method="GET" class="d-flex")
+            input(type="text", name="q", value=key, class="form-control")
+            button(type="submit", class="ml-2 btn btn-success") Search
+        table.table
+            thead
+                tr
+                    td Name
+                    td Age
+                    td Action
+            tbody
+            each user in users
+                tr 
+                    td #{user.name}
+                    td #{user.age} 
+                    td
+                        a(href="/user/" + user.id) View

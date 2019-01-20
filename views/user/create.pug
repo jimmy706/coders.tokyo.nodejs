@@ -1,0 +1,19 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        a(href="/user") Back
+        h1.text-center Create user
+        if errors
+            each err in errors
+                .alert.alert-danger #{err}
+
+        form(action="/user/create" method = "POST" class="container")
+            .form-group
+                label Name
+                input(type="text", name="name" class="form-control" value=values ? values.name : "")
+
+            .form-group
+                label Age
+                input(type="number", name="age" class="form-control" value=values ? values.age : "")
+            
+            button(class = "btn btn-primary") Create

@@ -1,0 +1,18 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        h1.text-center Login
+        if errors
+            each err in errors
+                .alert.alert-danger #{err}
+
+        form(action="/login" method = "POST" class="container")
+            .form-group
+                label Email
+                input(type="email", name="email" class="form-control" )
+
+            .form-group
+                label password
+                input(type="password", name="password" class="form-control" )
+            
+            button(class = "btn btn-primary") Login
