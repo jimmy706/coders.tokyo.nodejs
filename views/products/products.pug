@@ -14,9 +14,13 @@ block content
     - var index = 1;
     nav(aria-label='...')
         ul#page-list(class="d-flex justify-content-center pagination")
+            li.page-item.page-prev
+                a.page-link(href="") prev
             while index <= links    
                 li.page-item(data-locate=index)
                     a.page-link(href='/products?page=' + index) #{index++}
+            li.page-item.page-next
+                a.page-link(href="") next
     
     script(src="/js/dom.js")
 
