@@ -18,6 +18,8 @@ html(lang="en")
                         a.nav-link(href='/login') Login
                     li.nav-item
                         a.nav-link(href='/products') Product
+                    li.nav-item
+                        a.nav-link(href='/products/cart') Cart
             if user
                 p.text-secondary #{user.name}
         block content

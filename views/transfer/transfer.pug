@@ -1,0 +1,16 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        h1.text-center Transfer money
+
+        form(action="/transfer" method = "POST" class="container")
+            input(type="hidden", name="_csrf", value= csrfToken)
+            .form-group
+                label Account
+                input(type="text", name="accountId" class="form-control")
+
+            .form-group
+                label Ammount
+                input(type="number", name="ammount" class="form-control")
+            
+            button(class = "btn btn-primary") Transfer

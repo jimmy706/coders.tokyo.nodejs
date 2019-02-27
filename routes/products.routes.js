@@ -2,8 +2,10 @@
 const express = require('express');
 const router = express.Router();
 
-const {renderProductsPage} = require("../controllers/products.controller");
+const {renderProductsPage, addToCart, renderCartPage} = require("../controllers/products.controller");
 
-router.get('/', renderProductsPage)
+router.get('/', renderProductsPage);
+router.get('/add-to-cart/:productId', addToCart);
+router.get('/cart', renderCartPage);
 
 module.exports = router;

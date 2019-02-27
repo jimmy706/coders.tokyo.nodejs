@@ -9,7 +9,7 @@ block content
                         h5 #{product.name}
                         p=product.desc
                         p=product.price
-                        button(class="btn btn-primary") Add to cart
+                        a(class="btn btn-primary", href= "/products/add-to-cart/" + product.id) Add to cart
     
     - var index = 1;
     nav(aria-label='...')

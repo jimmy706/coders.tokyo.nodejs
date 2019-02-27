@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+block content
+    section.container
+        h1.text-center Cart list
+        ul
+            for product in cartList
+                li
+                    img(src=product.info.image)
+                    h5=product.info.name                        
+                    p=product.info.desc
+                    p=product.info.price
+                    span Amout: #{product.amount}
